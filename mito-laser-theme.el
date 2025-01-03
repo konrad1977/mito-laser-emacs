@@ -1,6 +1,7 @@
-;;; package: --- A theme inspired by the colors of the famous painting by Katsushika Hokusa -*- lexical-binding: t; -*-
+;;; package: --- A beautiful theme inspired by neon lights -*- lexical-binding: t -*-
 
-;;; Commentary: A neon theme
+;;; Commentary:
+;; A neon theme
 
 ;;; Code:
 
@@ -13,7 +14,7 @@
   (error "Requires Emacs 24 or later"))
 
 (autothemer-deftheme
- mito-laser "A theme based on mito-laser"
+ mito-laser "A neon inspired theme"
 
  ((((class color) (min-colors #xFFFFFF))        ; col 1 GUI/24bit
    ((class color) (min-colors #xFF)))           ; col 2 Xterm/256
