@@ -250,7 +250,7 @@
 
   (evil-ex-lazy-highlight        (:background baby :foreground darkest :italic t))
 
-  (highlight-symbol-face        (:background darker :foreground teal :weight 'bold))
+  (highlight-symbol-face        (:foreground lemon :weight 'bold :underline t))
 
   (smerge-base		        (:background purple))
   (smerge-markers		(:background darker :foreground purple))
