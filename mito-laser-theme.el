@@ -63,11 +63,13 @@
   (line-number                  (:foreground grey2))
   (line-number-current-line     (:background darker :foreground white :weight 'semi-bold))
   (region                       (:background one))
-  (mode-line                    (:background line))
-  (mode-line-inactive           (:background one2 :foreground purple))
-  (mode-line-active             (:background line :foreground purple))
-  (mode-line-highlight          (:foreground red))
+
+  (mode-line                    (:background line :foreground purple :box (:line-width 1 :color one3)))
+  (mode-line-inactive           (:background black2 :foreground purple))
+  (mode-line-active             (:inherit 'mode-line))
+  (mode-line-highlight          (:foreground purple3))
   (mode-line-buffer-id          (:foreground nord))
+
   (vertical-border              (:foreground one))
   (link                         (:foreground blue))
   (custom-link                  (:foreground blue))
@@ -83,7 +85,7 @@
   (corfu-annotations            (:background darkest))
   (corfu-default                (:background darkest :foreground white))
   (corfu-border                 (:background darkest))
-  (corfu-popupinfo              (:background darkest :foreground blue :box (:line-width 2 :color black)))
+  (corfu-popupinfo              (:background darkest :foreground blue :box (:line-width 1 :color black)))
   
   (eldoc-box-body               (:inherit 'vertico-posframe))
   (eldoc-box-border             (:background grey2))
@@ -100,16 +102,16 @@
 
   ;;treemacs
   (treemacs-window-background-face               (:background darker))
-  (treemacs-directory-face                       (:foreground purple))
-  (treemacs-file-face                            (:foreground purple))
-  (treemacs-nerd-icons-file-face                 (:inherit 'treemacs-file-face))
-  (treemacs-nerd-icons-root-face                 (:inherit 'treemacs-directory-face))
+  (treemacs-directory-face                       (:foreground nord))
+  (treemacs-file-face                            (:foreground nord))
+  ;; (treemacs-nerd-icons-file-face                 (:inherit 'treemacs-file-face))
+  ;; (treemacs-nerd-icons-root-face                 (:inherit 'treemacs-directory-face))
   (treemacs-git-added-face                       (:foreground teal))
   (treemacs-git-renamed-face                     (:foreground pink))
   (treemacs-git-ignored-face                     (:foreground grey3 :italic t))
-  (treemacs-git-unmodified-face                  (:foreground purple))
+  (treemacs-git-unmodified-face                  (:foreground white))
   (treemacs-git-untracked-face                   (:foreground vibrant))
-  (treemacs-git-modified-face                    (:foreground nord))
+  (treemacs-git-modified-face                    (:foreground purple3 :italic t))
 
   (elisp-shorthand-font-lock-face                (:foreground pink))
 
@@ -211,26 +213,14 @@
   (rainbow-delimiters-depth-8-face               (:foreground orange))
   (rainbow-delimiters-depth-9-face               (:foreground blue))
 
-  (punch-line-evil-normal-face  (:foreground white
-                                   :background nord :weight 'bold
-                                   :box (:line-width 8 :color nord)))
-
-  (punch-line-evil-visual-face  (:foreground white
-                                   :background light :weight 'bold
-                                   :box (:line-width 8 :color light)))
-
-  (punch-line-evil-replace-face  (:foreground white
-                                   :background red :weight 'bold
-                                   :box (:line-width 8 :color red)))
-
-  (punch-line-evil-insert-face  (:foreground darker
-                                   :background teal :weight 'bold
-                                   :box (:line-width 8 :color teal)))
-
-  (punch-line-project-face        (:foreground purple :weight 'bold))
-  (punch-line-buffer-name-face    (:foreground white :weight 'bold))
-  (punch-line-time-face           (:foreground purple))
-  (punch-line-major-mode-face     (:foreground light))
+  (punch-line-evil-normal-face  (:foreground white :background nord :weight 'bold))
+  (punch-line-evil-visual-face  (:foreground white :background light :weight 'bold))
+  (punch-line-evil-replace-face (:foreground white :background red :weight 'bold))
+  (punch-line-evil-insert-face  (:foreground darker :background teal :weight 'bold))
+  (punch-line-project-face      (:foreground purple :weight 'bold))
+  (punch-line-buffer-name-face  (:foreground white :weight 'bold))
+  (punch-line-time-face         (:foreground purple))
+  (punch-line-major-mode-face   (:foreground light))
 
   (term                     (:background darkest :foreground purple))
   (term-color-black         (:background darkest :foreground darkest))
@@ -276,7 +266,14 @@
   (eglot-parameter-hint-face (:inherit 'eglot-inlay-hint-face))
   (eglot-type-hint-face (:inherit 'eglot-inlay-hint-face))
 
+  (elfeed-search-tag-face (:foreground nord))
+
   ))
+
+;;;###autoload
+(when load-file-name
+  (add-to-list 'custom-theme-load-path
+               (file-name-as-directory (file-name-directory load-file-name))))
 
 (provide-theme 'mito-laser)
 ;;; mito-laser-theme.el ends here
