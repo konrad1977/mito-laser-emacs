@@ -221,6 +221,7 @@
   (punch-line-buffer-name-face  (:foreground white :weight 'bold))
   (punch-line-time-face         (:foreground purple))
   (punch-line-major-mode-face   (:foreground light))
+  (punch-line-separator-face    (:foreground one3 :weight 'thin))
 
   (term                     (:background darkest :foreground purple))
   (term-color-black         (:background darkest :foreground darkest))
